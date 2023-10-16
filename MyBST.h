@@ -6,8 +6,6 @@
 #define BINARYTREES_MYBST_H
 
 
-
-
 typedef struct Node{
     int data;
     Node * left,

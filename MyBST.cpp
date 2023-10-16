@@ -436,35 +436,35 @@ int MyBST::height()
 //what level am i
 int MyBST::whatLevelAmI(int data)
 {
-    if(isEmpty())
+    if (isEmpty())
     {
         return -1;
     }
 
-    Node * current = root; //ptr para ir recorriendo el arbol
+    Node *current = root; //ptr para ir recorriendo el arbol
     int level_count = 1; //contador del nivel del nodo actual
     while (current != nullptr)
     {
         //si llegamos al nodo buscado, return el nivel en el que se encuentra
-        if(current->data == data)
+        if (current->data == data)
         {
             return level_count;
         }
 
         //Si el valor es menor al nodo actual, buscamos hacia la izquierda
-        if(data < current->data)
+        if (data < current->data)
         {
             current = current->left;
+            level_count++; // Increment the level_count when moving left
         }
             //Si el valor es mayor al nodo actual, buscamos hacia la derecha
         else
         {
             current = current->right;
+            level_count++; // Increment the level_count when moving right
         }
-        level_count++;
     }
     return -1; //El nodo no se encuentra en el arbol
-
 }
 
 //Ancestors
