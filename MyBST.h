@@ -7,11 +7,6 @@
 
 
 
-/* TODO
- *
- * LEVEL
- *
- * */
 
 typedef struct Node{
     int data;
@@ -45,7 +40,7 @@ private:
     void inorder(Node* current); //OK
     void postorder(Node* current); //OK
     int height(Node*current); // OK
-    bool ancestors(Node *current,int data);
+    bool ancestors(Node *current,int data); //OK
     //--------------------------------------//
 
 
@@ -69,13 +64,13 @@ public:
     void preorder(); //OK
     void inorder(); //OK
     void postorder(); //OK
-    void level();
+    void level(); //OK
     void visit(int type); //OK
         //Type: 1->preorder,2->inorder.3->postorder,4->level
 
     int height(); // OK -- regresa la altura del BST.
 
-    void ancestors(int data);
+    void ancestors(int data); //OK
 
         //imprime los ancestros del valor pasado.
         //el orden de impresión debe ser de la raíz

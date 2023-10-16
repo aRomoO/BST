@@ -4,6 +4,7 @@
 
 #include "MyBST.h"
 #include "iostream"
+#include "queue"
 
 //Constructor
 MyBST::MyBST()
@@ -227,8 +228,6 @@ bool MyBST::remove(int data) {
     return false;
 }
 
-
-
 //search
 bool MyBST::search(int data) {
     if(isEmpty())
@@ -291,7 +290,7 @@ bool MyBST::searchRec(int data, Node * current) {
 }
 //----//
 
-//Traversal
+//Traversal//
 //Inorder
 void MyBST::inorder(Node *current) {
     if (current != nullptr) {
@@ -342,6 +341,44 @@ void MyBST::postorder()
 //level
 void MyBST::level()
 {
+    if (root == nullptr)
+    {
+        std::cout << "Tree is empty" << std::endl;
+        return;
+    }
+
+
+    //Notas: Se borra el elemento top (imprimiendo su contenido) y enqueueamos a cada hijo que no esté vacio
+
+    std::queue<Node*> nodeQueue;
+    nodeQueue.push(this->root);
+
+    //loop mientras el queue no esté vacio
+    while (!nodeQueue.empty())
+    {
+        //asignar a current node el primer elemento del queue
+        Node* current = nodeQueue.front();
+
+        //Borrar el elemento del queue (pop)
+        nodeQueue.pop();
+
+        //imprimir el elemento
+        std::cout << current->data << ",";
+
+
+        //Se hace push a los hijos del current element si no están vacios
+        if (current->left != nullptr)
+        {
+            nodeQueue.push(current->left);
+        }
+
+        if (current->right != nullptr)
+        {
+            nodeQueue.push(current->right);
+        }
+    }
+
+    std::cout << std::endl;
 
 }
 
@@ -374,9 +411,7 @@ void MyBST::visit(int type)
     }
 }
 
-
-
-//Level and height
+//height
 int MyBST::height(Node *current)
 {
     if (this->root == nullptr)
@@ -394,6 +429,8 @@ int MyBST::height()
 {
     return height(this->root);
 }
+
+//what level am i
 int MyBST::whatLevelAmI(int data)
 {
     if(isEmpty())
