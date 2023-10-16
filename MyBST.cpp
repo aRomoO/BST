@@ -31,6 +31,7 @@ bool MyBST::insert(int data) {
     if (isEmpty())
     {
         this->root = new Node(data);
+        this->size++;
         return true;
     }
 
@@ -46,6 +47,7 @@ bool MyBST::insert(int data) {
             if (current->left == nullptr)
             {
                 current->left = new Node(data);
+                this->size++;
                 return true;
             }
             else
@@ -63,6 +65,7 @@ bool MyBST::insert(int data) {
                 if (current->right == nullptr)
                 {
                     current->right = new Node(data);
+                    this->size++;
                     return true;
                 }
                 //Si no llegamos al último nodo a la derecha, bajar un nodo hacia la derecha
