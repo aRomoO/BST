@@ -142,6 +142,7 @@ bool MyBST::remove(int data) {
             root = nullptr;
         }
         delete current;
+        this->size--;
         return true;
     }
 
@@ -166,6 +167,7 @@ bool MyBST::remove(int data) {
             root = current->right;
         }
         delete current;
+        this->size--;
         return true;
     }
     else if (current->right == nullptr)
@@ -187,6 +189,7 @@ bool MyBST::remove(int data) {
             root = current->left;
         }
         delete current;
+        this->size--;
         return true;
     }
 
@@ -217,6 +220,7 @@ bool MyBST::remove(int data) {
         }
 
         delete predecessor;
+        this->size--;
         return true;
     }
 

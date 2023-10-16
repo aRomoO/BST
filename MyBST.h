@@ -38,7 +38,7 @@ typedef struct Node{
 
 class MyBST{
 private:
-    int size;   //number of elements in the tree
+    int size;   //numero de elementos en el árbol
     Node* root; //ptr to root node
     //bool search(int data,Node* current);
     void preorder(Node* current); //OK
