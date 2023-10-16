@@ -1,0 +1,1 @@
+/usr/bin/c++ -g CMakeFiles/BinaryTrees.dir/main.cpp.o CMakeFiles/BinaryTrees.dir/MyBST.cpp.o -o BinaryTrees 
