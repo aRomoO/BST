@@ -296,7 +296,7 @@ bool MyBST::searchRec(int data, Node * current) {
 void MyBST::inorder(Node *current) {
     if (current != nullptr) {
         inorder(current->left);
-        std::cout << current->data << ", ";
+        std::cout << current->data << ",";
         inorder(current->right);
     }
 }
@@ -314,7 +314,7 @@ void MyBST::preorder(Node *current)
 
     preorder(current->left);
     preorder(current->right);
-    std::cout << current->data << ", ";
+    std::cout << current->data << ",";
 
 }
 void MyBST::preorder()
@@ -331,7 +331,7 @@ void MyBST::postorder(Node *current)
     }
     postorder(current->left);
     postorder(current->right);
-    std::cout << current->data << ", ";
+    std::cout << current->data << ",";
 
 }
 void MyBST::postorder()
