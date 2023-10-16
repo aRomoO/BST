@@ -377,8 +377,6 @@ void MyBST::visit(int type)
 
 
 //Level and height
-
-
 int MyBST::height(Node *current)
 {
     if (this->root == nullptr)
@@ -396,7 +394,6 @@ int MyBST::height()
 {
     return height(this->root);
 }
-
 int MyBST::whatLevelAmI(int data)
 {
     if(isEmpty())
@@ -429,6 +426,31 @@ int MyBST::whatLevelAmI(int data)
     return -1; //El nodo no se encuentra en el arbol
 
 }
+
+//Ancestors
+bool MyBST::ancestors(Node *current, int data)
+{
+    //Caso base
+    if (current == nullptr) {
+        return false;
+    }
+
+    if (current->data == data) {
+        return true; // Encontramos el valor, no es un ancestro
+    }
+
+    if (ancestors(current->left, data) || ancestors(current->right, data)) {
+        std::cout << current->data << " ";
+        return true; // si al menos un hijo tiene el data que buscamos, estamos en un ancestro
+    }
+
+    return false;
+}
+void MyBST::ancestors(int data)
+{
+    ancestors(this->root, data);
+}
+
 
 
 

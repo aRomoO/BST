@@ -10,8 +10,6 @@
 /* TODO
  *
  * LEVEL
- * ANCSETOR
- *
  *
  * */
 
@@ -41,9 +39,15 @@ private:
     int size;   //numero de elementos en el árbol
     Node* root; //ptr to root node
     //bool search(int data,Node* current);
+
+    //Metodos privados de funciones recursivas
     void preorder(Node* current); //OK
     void inorder(Node* current); //OK
     void postorder(Node* current); //OK
+    int height(Node*current); // OK
+    bool ancestors(Node *current,int data);
+    //--------------------------------------//
+
 
     //Funciones recursivas
     bool searchRec(int data, Node * current);
@@ -70,7 +74,6 @@ public:
         //Type: 1->preorder,2->inorder.3->postorder,4->level
 
     int height(); // OK -- regresa la altura del BST.
-    int height(Node*current); // OK
 
     void ancestors(int data);
 
