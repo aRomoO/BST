@@ -32,9 +32,9 @@ private:
     int size;   //number of elements in the tree
     Node* root; //ptr to root node
     //bool search(int data,Node* current);
-    void preorder(Node* current);
-    void inorder(Node* current); //PROBAR
-    void postorder(Node* current);
+    void preorder(Node* current); //OK
+    void inorder(Node* current); //OK
+    void postorder(Node* current); //OK
 
     //Funciones recursivas
     bool searchRec(int data, Node * current);
@@ -55,9 +55,9 @@ public:
         //y regresa true, caso contrario sólo regresa false
 
 
-    void preorder();
-    void inorder(); //PROBAR
-    void postorder();
+    void preorder(); //OK
+    void inorder(); //OK
+    void postorder(); //OK
     void level();
     void visit(int type); //Type: 1->preorder,2->inorder.3->postorder,4->level
     int height();//regresa la altura del BST.
