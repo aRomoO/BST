@@ -313,10 +313,9 @@ void MyBST::preorder(Node *current)
     {
         return;
     }
-
+    std::cout << current->data << ",";
     preorder(current->left);
     preorder(current->right);
-    std::cout << current->data << ",";
 
 }
 void MyBST::preorder()
@@ -325,16 +324,13 @@ void MyBST::preorder()
 }
 
 //Postrder
-void MyBST::postorder(Node *current)
-{
-    if(current == nullptr)
-    {
+void MyBST::postorder(Node *current) {
+    if (current == nullptr) {
         return;
     }
     postorder(current->left);
     postorder(current->right);
     std::cout << current->data << ",";
-
 }
 void MyBST::postorder()
 {
@@ -417,14 +413,14 @@ void MyBST::visit(int type)
 //height
 int MyBST::height(Node *current)
 {
-    if (this->root == nullptr)
+    if (current == nullptr)
     {
-        return -1; // Si es arbol está vacio, regresar -1
+        return 0; // Si es arbol está vacio, regresar 0
     }
     else
     {
-        int leftHeight = height(root->left);
-        int rightHeight = height(root->right);
+        int leftHeight = height(current->left);
+        int rightHeight = height(current->right);
         return std::max(leftHeight, rightHeight) + 1;
     }
 }
@@ -433,7 +429,7 @@ int MyBST::height()
     return height(this->root);
 }
 
-//what level am i
+//what level am I
 int MyBST::whatLevelAmI(int data)
 {
     if (isEmpty())
@@ -461,7 +457,7 @@ int MyBST::whatLevelAmI(int data)
         else
         {
             current = current->right;
-            level_count++; // Increment the level_count when moving right
+            level_count++; // Incrementar la cuenta al mover a la derecha
         }
     }
     return -1; //El nodo no se encuentra en el arbol
@@ -470,13 +466,13 @@ int MyBST::whatLevelAmI(int data)
 //Ancestors
 bool MyBST::ancestors(Node *current, int data)
 {
-    //Caso base
+    //Casos: llegamos a un nullptr o llegamos al valor buscado
     if (current == nullptr) {
         return false;
     }
 
     if (current->data == data) {
-        return true; // Encontramos el valor, no es un ancestro
+        return true;
     }
 
     if (ancestors(current->left, data) || ancestors(current->right, data)) {
